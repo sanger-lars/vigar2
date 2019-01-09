@@ -26,6 +26,10 @@
     p {
       line-height: 2;
     }
+    
+    .skjul {
+        display: none;
+    }
 
     textarea {
       margin-top: 20px;
@@ -82,7 +86,7 @@
         <input id="upload_bild" type="file" name="files">
         <br>
         vælg billed position >
-        <select id="poss" name="poss" >
+        <select id="poss" name="poss" onchange="check_knapstatus()">
           <option value="0"></option>
           <option value="1">venstre</option>
           <option value="2">midten</option>
@@ -90,7 +94,7 @@
         </select>
         <?php 
           if (isset($_SESSION['u_id'])) {
-            echo '<button class="sort_knap" type="submit" id="send" > Upload </button>';
+            echo '<button class="sort_knap skjul" type="submit" id="send" > Upload </button>';
           }
         ?>
         <img id="output_image" style="width: auto;">

@@ -56,8 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$jsondata = json_encode($data);
 
 				file_put_contents("../upload2.json", $jsondata);
-				sleep(1);
-				header( 'Location: ../../../upload.php?'.$_POST['enhed'] ) ;
+				//sleep(1);
+				//$lars = '"../../../upload.php?' . $_POST['enhed'] . '"';
+				//echo "<script>window.location = $lars;</script>";
+				header( 'Location: ../../../upload.php?'.$_POST['enhed'] );
 				exit();
 			} else {
 				echo $file;
@@ -80,8 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$jsondata = json_encode($data);
 
 				file_put_contents("../upload2.json", $jsondata);
-				sleep(1);
-				header( 'Location: ../../../upload.php?'.$_POST['enhed'] ) ;
+				//sleep(1);
+				//$lars = '"../../../upload.php?' . $_POST['enhed'] . '"';
+				//echo "<script>window.location = $lars;</script>";
+				 
+				header( 'Location: ../../../upload.php?'.$_POST['enhed'] );
 				exit();			
 		}
 

@@ -35,7 +35,7 @@ function bild() {
 	    	data: JSON.stringify(alle_data),
 	    	filnavn: fnavn
 	    }).done(function (data){
-	    	location.reload();
+	    	location = "upload.php?"+document.getElementById('enhed').value;
 		}).fail(function(data) {
     		alert( "error" );
   		  	debugger;
@@ -44,6 +44,18 @@ function bild() {
 	}
 }
 
+function check_knapstatus() {
+	var cc = document.getElementsByName('logout-submit');
+    if (cc.length > 0) {
+    	if (document.getElementById("poss").value == "0" ||
+    		document.getElementById("upload_bild").value == "" ||
+    		document.getElementById('enhed').value == "") {
+    		$("#send").toggleClass("skjul",true);
+    	} else {
+    		$("#send").toggleClass("skjul",false);
+    	}
+    }
+}
 
 function vis_data(data) {
 	// bestem hvilken enhed
@@ -91,6 +103,7 @@ function vis_data(data) {
     	});
     } else alert('Du er ikke logget ind');
 
+    check_knapstatus();
 
     // ændre teksten når den bliver tastet ind
 	var txt = document.getElementById("tekst");
@@ -106,18 +119,17 @@ function vis_data(data) {
    {
     var output = document.getElementById('output_image');
     output.src = reader.result;
-    debugger;
     output.style.height = "300px";
    }
    reader.readAsDataURL(ev.target.files[0]);
-   
+   check_knapstatus();
   }
 
 var inp;
-
+var xxx = window.location.search;
 document.addEventListener("DOMContentLoaded", function() {
 	
-	var xxx = window.location.search;
+	
 	if (xxx > "") {
 		xxx = xxx.substring(1);
 		document.getElementById('enhed').value = xxx;
