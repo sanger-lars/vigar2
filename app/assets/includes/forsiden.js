@@ -37,7 +37,7 @@ function slet_tekst() {
 }
 
 function gem_data(data, sletBool, filnavn) {
-	var posting = $.post("assets/upload/scripts/gem_banner.php", {
+	var posting = $.post("assets/includes/gem_banner.php", {
     data: JSON.stringify(data),
     slet: sletBool,
     filnavn: filnavn

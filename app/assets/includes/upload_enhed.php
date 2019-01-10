@@ -3,7 +3,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if (isset($_FILES['files'])) {
         $errors = [];
-        $path = '../';
+        $path = '../upload/';
 		$extensions = ['jpg', 'png', 'gif'];
 		$nr = $_POST['nr'];
 		$tekst = $_POST['tekst'];
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$ok = move_uploaded_file($file_tmp, $file);
 			sleep(1);
 			if ($ok) {
-				$jsondata = @file_get_contents("../upload2.json", true);
+				$jsondata = @file_get_contents("../upload/upload2.json", true);
 				$data = json_decode($jsondata);
 				$data[$nr] = $tekst;
 				$gammelt_filnavn = $data[$nr+$_POST['poss']];
@@ -55,18 +55,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 				$jsondata = json_encode($data);
 
-				file_put_contents("../upload2.json", $jsondata);
+				file_put_contents("../upload/upload2.json", $jsondata);
 				//sleep(1);
 				//$lars = '"../../../upload.php?' . $_POST['enhed'] . '"';
 				//echo "<script>window.location = $lars;</script>";
-				header( 'Location: ../../../upload.php?'.$_POST['enhed'] );
+				header( 'Location: ../../upload.php?'.$_POST['enhed'] );
 				exit();
 			} else {
 				echo $file;
 				exit();
 			}		
 		} else {
-				$jsondata = @file_get_contents("../upload2.json", true);
+				$jsondata = @file_get_contents("../upload/upload2.json", true);
 				$data = json_decode($jsondata);
 				$data[$nr] = $tekst;
 				$ht_txt = "<h3 align='center'>" . $tekst . "</h3><div class='flex3'>";
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				//$lars = '"../../../upload.php?' . $_POST['enhed'] . '"';
 				//echo "<script>window.location = $lars;</script>";
 				 
-				header( 'Location: ../../../upload.php?'.$_POST['enhed'] );
+				header( 'Location: ../../upload.php?'.$_POST['enhed'] );
 				exit();			
 		}
 

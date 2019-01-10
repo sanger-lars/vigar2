@@ -16,7 +16,7 @@
   <!-- endbuild -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/upload/scripts/forsiden.js"></script>
+  <script type="text/javascript" src="assets/includes/forsiden.js"></script>
 
   <script>
   function preview_image(ev) 
@@ -132,7 +132,7 @@
     echo '
       <div align="center" style="color: #93cc19;">
       
-        <form method="POST" action="assets/upload/scripts/banner_opload.php" enctype="multipart/form-data" >
+        <form method="POST" action="assets/includes/banner_opload.php" enctype="multipart/form-data" >
             <textarea name="tekst" class="tekst2" id="tekst" placeholder="Tekst" align="center" onchange="vis_tekstfelt()"></textarea>
             <br><br><span class="knap" onmousedown="slet_tekst()">Slet tekst-banner</span>
             <br><br>
@@ -183,7 +183,7 @@
 <!-- build:js assets/scripts/App.js -->
 <script type="text/javascript" src="temp/scripts/App.js"></script>
 <!-- endbuild -->
-<script type="text/javascript" src="assets/upload/scripts/hent_bannere.js"></script>
+<script type="text/javascript" src="assets/includes/hent_bannere.js"></script>
 
 
 </body>

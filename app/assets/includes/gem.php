@@ -1,5 +1,5 @@
 <?php 
-	$filename = "../upload2.json";
+	$filename = "../upload/upload2.json";
 
 	if(isset($_POST['data'])){
 		$jsondata = $_POST['data'];

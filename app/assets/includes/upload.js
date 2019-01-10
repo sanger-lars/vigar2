@@ -2,7 +2,7 @@ let log = console.log;
 let nr;
 
 function hent_gemte_data(callback) {
-	var posting = $.post("assets/upload/scripts/hent.php", {
+	var posting = $.post("assets/includes/hent.php", {
     alle: "alle"
   }).done(function (data) {
     var alle_data = JSON.parse(data);
@@ -31,7 +31,7 @@ function bild() {
 		//document.getElementById('preview').innerHTML = txt;
 
 		alle_data[nr+4] = txt;
-		var posting = $.post("assets/upload/scripts/gem.php", {
+		var posting = $.post("assets/includes/gem.php", {
 	    	data: JSON.stringify(alle_data),
 	    	filnavn: fnavn
 	    }).done(function (data){

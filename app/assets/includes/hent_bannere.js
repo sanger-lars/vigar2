@@ -1,7 +1,7 @@
 let alle_data;
 
 function hent_html(callback) {
-	var posting = $.post("assets/upload/scripts/hent.php", {
+	var posting = $.post("assets/includes/hent.php", {
     bannere: "alle"
   }).done(function (data) {
     alle_data = JSON.parse(data);

@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['files']) && $_FILES['files']['name'] != "") {
     	
 	        $errors = [];
-	        $path = '../../images/bannere/';
+	        $path = '../images/bannere/';
 			$extensions = ['jpg', 'jpeg', 'png', 'gif'];
 			
 	          
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['dokument']) && $_FILES['dokument']['name'] != "") {
     	
         $errors = [];
-        $path = '../../dokumenter/';
+        $path = '../dokumenter/';
 		$extensions = ['jpg', 'jpeg', 'png', 'gif', 'doc', 'docx','pdf'];
 		
 
@@ -81,12 +81,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if (isset($_POST['jsondata'])) {
-    	$filename = "../banner.json";
+    	$filename = "../upload/banner.json";
     	$jsondata = $_POST['jsondata'];
     	file_put_contents($filename, $jsondata);
 		sleep(1);
 
-		header( 'Location: ../../../forsiden.php');
+		header( 'Location: ../../forsiden.php');
 
     }
 

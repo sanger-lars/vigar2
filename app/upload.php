@@ -16,7 +16,7 @@
   <!-- endbuild -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/upload/scripts/upload.js"></script>  
+  <script type="text/javascript" src="assets/includes/upload.js"></script>  
   
   <style>
     h3 {
@@ -70,7 +70,7 @@
   </div>
   
   <div align="center">
-    <form method="POST" action="assets/upload/scripts/test.php" id="larsform" enctype="multipart/form-data" >
+    <form method="POST" action="assets/includes/upload_enhed.php" id="larsform" enctype="multipart/form-data" >
       <p style="color: yellow"> 
         vælg enhed >  
         <select id="enhed" name="enhed" onchange="hent_gemte_data(vis_data)">
