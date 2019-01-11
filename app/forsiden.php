@@ -159,7 +159,6 @@
               <option value="1">Ja</option>
               <option value="2">Nej</option>
             </select>
-            <input type="text" id="jsondata-link" name="jsondata-link" style="visibility: hidden;">
             <input type="text" id="jsondata" name="jsondata" style="visibility: hidden;">
 
             <br><br>
@@ -170,12 +169,10 @@
   ?>
   
   <br>
-  <div class="hvidbrun skjul" id="tekstfeldt"> </div>
-  
+  <div class="hvidbrun skjul" id="tekstfeldt"oncontextmenu="hoejreklik(event);return false;"></div>
   <br>
-
-  <div id="banner" style="display: visible"></div>
-
+   <div id="banner" style="display: visible;" oncontextmenu="hoejreklik(event);return false;"></div> 
+  <div id="b-banner" oncontextmenu="hoejreklik(event);return false;"></div>
   <div class="clear"></div>
   <div class="filler" style="height: 300px"></div>
   <script src="footer.html"></script>  

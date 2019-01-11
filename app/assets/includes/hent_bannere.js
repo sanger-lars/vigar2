@@ -12,20 +12,21 @@ function hent_html(callback) {
 hent_html(udfyld_html);
 
 function udfyld_html(data) {
+    
 	var tekst = data[2];
     if (data[6] != "") {
+        // vis tekst-banner preview
         document.getElementById('tekstfeldt').innerHTML = alle_data[6];
-        $("#tekstfeldt").toggleClass("skjul",false);  
+        $("#tekstfeldt").toggleClass("skjul",false);    
     } 
     
-
     var her = document.getElementById("banner");
     her.innerHTML = "";
     her.insertAdjacentHTML('beforeend', tekst);
 
     if (data[3] != null) {
     	var tekst = data[3];
-	    var her = document.getElementById("banner");
+	    var her = document.getElementById("b-banner");
 	    her.insertAdjacentHTML('beforeend', tekst);
     }
 
@@ -36,5 +37,10 @@ function udfyld_html(data) {
         x[i].src = x[i].src+"?"+tal;
     }
 
+
+    // fyld tekstfelt pa forsiden.php
+    if (document.location.pathname === "/forsiden.php") {
         
+        document.getElementById('tekst').value = alle_data[4];
+    }    
 }
