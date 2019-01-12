@@ -10,14 +10,14 @@ function hent_gemte_data(callback) {
   });
 }
 
-function bild() {
+function bild(e) {
 	let fnavn;
 	// check for localhost
 	var lokal = (document.location.href.indexOf("localhost") > -1);
 	var split_nr = (lokal) ? 5 : 6;
 
 	if (confirm('vil du slette billedet ?')) {
-		var fnavn1 = this.src.split('/')[split_nr];
+		var fnavn1 = e.src.split('/')[split_nr];
 		fnavn = fnavn1.split('?')[0];
 		i = 0; 
 		while (alle_data[i] !== fnavn) {
@@ -38,7 +38,6 @@ function bild() {
 	    	location = "upload.php?"+document.getElementById('enhed').value;
 		}).fail(function(data) {
     		alert( "error" );
-  		  	debugger;
  		});
 		
 	}
@@ -81,6 +80,21 @@ function vis_data(data) {
     var x = document.getElementsByTagName("img");
     for (var i = 1; i < x.length; i++) {
     	x[i].src = x[i].src+"?"+tal;
+    	if (x[i].id == "uploadet_bild") {
+    		var filnavn = x[i].src.split('/')[5];
+    		switch (filnavn.substr(3,1)) {
+    			case "1":
+    				x[i].title = "Venstre";
+    				break;
+    			case "2":
+    				x[i].title = "Midten";
+    				break;
+    			case "3":
+    				x[i].title = "Højre";
+    				break;
+    		}
+
+    	}
     }
     
 
@@ -95,11 +109,15 @@ function vis_data(data) {
     	filnavn[i] = im[i].src.split('/')[5];
     }
 
-    // check for billede click hvis logget ind
+    // check for billede højre-click hvis logget ind
     var cc = document.getElementsByName('logout-submit');
     if (cc.length > 0) {
     	$("img").each(function (index) {
-    		$(this).on("click", bild);
+    		var that = this;
+    		$(this).contextmenu(function (ev) {
+    			ev.preventDefault();
+    			bild(that);
+    		});
     	});
     } else alert('Du er ikke logget ind');
 

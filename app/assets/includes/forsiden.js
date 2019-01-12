@@ -84,7 +84,7 @@ function lav_html(slet) {
 	} else {
 		html_banner = alle_data[bannerfelt_html];
 	}
-debugger;
+
 	if (tekst != "" && alle_data[tekstFelt_link] != "") {
 		// 		
 	}
