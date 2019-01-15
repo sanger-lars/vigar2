@@ -1,6 +1,10 @@
 let log = console.log;
 let nr;
 
+// check for localhost
+	var lokal = (document.location.href.indexOf("localhost") > -1);
+	var split_nr = (lokal) ? 5 : 6;
+
 function hent_gemte_data(callback) {
 	var posting = $.post("assets/includes/hent.php", {
     alle: "alle"
@@ -12,9 +16,6 @@ function hent_gemte_data(callback) {
 
 function bild(e) {
 	let fnavn;
-	// check for localhost
-	var lokal = (document.location.href.indexOf("localhost") > -1);
-	var split_nr = (lokal) ? 5 : 6;
 
 	if (confirm('vil du slette billedet ?')) {
 		var fnavn1 = e.src.split('/')[split_nr];
@@ -43,12 +44,16 @@ function bild(e) {
 	}
 }
 
-function check_knapstatus() {
+function check_knapstatus(ok) {
 	var cc = document.getElementsByName('logout-submit');
     if (cc.length > 0) {
-    	if (document.getElementById("poss").value == "0" ||
+        if (ok) {
+            $("#send").toggleClass("skjul",false);
+        } else if (
+            document.getElementById("poss").value == "0" ||
     		document.getElementById("upload_bild").value == "" ||
-    		document.getElementById('enhed').value == "") {
+    		document.getElementById('enhed').value == "") 
+        {
     		$("#send").toggleClass("skjul",true);
     	} else {
     		$("#send").toggleClass("skjul",false);
@@ -63,7 +68,6 @@ function vis_data(data) {
 	document.getElementById('nr').value = nr;
 	var html_tekst = data[nr+4];
 	alle_data = data;
-	
 	// ryd tekst felt og preview
 	document.getElementById("preview").innerHTML = "";
 	document.getElementById('tekst').value = "";
@@ -81,7 +85,7 @@ function vis_data(data) {
     for (var i = 1; i < x.length; i++) {
     	x[i].src = x[i].src+"?"+tal;
     	if (x[i].id == "uploadet_bild") {
-    		var filnavn = x[i].src.split('/')[5];
+    		var filnavn = x[i].src.split('/')[split_nr];
     		switch (filnavn.substr(3,1)) {
     			case "1":
     				x[i].title = "Venstre";
@@ -106,7 +110,7 @@ function vis_data(data) {
 	var filnavn = [];
     var im = document.getElementsByTagName("img");
     for (var i = 0; i < im.length; i++) {
-    	filnavn[i] = im[i].src.split('/')[5];
+    	filnavn[i] = im[i].src.split('/')[split_nr];
     }
 
     // check for billede højre-click hvis logget ind

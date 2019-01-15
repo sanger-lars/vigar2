@@ -60,8 +60,8 @@
 
 			
 			figure img {
-				width: 100%;
-				height: auto;
+				height: 400px;
+				width: auto;
 				
 			}
 
@@ -77,8 +77,15 @@
 			background-color: $mainGrey;
 			color: white;
 			padding-top: 20px;
+
+			figure img {
+				height: 400px;
+				width: auto;
+				
+			}
 			
 			figure {
+				width: 30%;
 				padding-bottom: 50px;
 				padding-top: 0px;
 			}

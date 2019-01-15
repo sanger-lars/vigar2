@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 				$jsondata = json_encode($data);
 
-				file_put_contents("../upload2.json", $jsondata);
+				file_put_contents("../upload/upload2.json", $jsondata);
 				//sleep(1);
 				//$lars = '"../../../upload.php?' . $_POST['enhed'] . '"';
 				//echo "<script>window.location = $lars;</script>";
@@ -94,8 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			print_r($errors);
 			echo $errors;
 		}
-    }
-
+    } 
     
 }
 

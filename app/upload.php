@@ -100,7 +100,7 @@
         <img id="output_image" style="width: auto;">
           
         <br>
-        <textarea name="tekst" class="tekst2" id="tekst" placeholder="Tekst" align="center" ></textarea>
+        <textarea name="tekst" class="tekst2" id="tekst" placeholder="Tekst" align="center" onchange="check_knapstatus(true)"></textarea>
         <br>
         </p>
     </form>
