@@ -12,6 +12,7 @@
 	#enheds_wrapper {
 		width: 100%;
 		margin: 0px auto;
+		padding: 1.0rem;
 		/* height: 900px; */
 	}
 
@@ -31,6 +32,7 @@
 	.enhed {
 		margin: auto; 
 		height: 5px;
+		font-size: 0.8rem;
 	}
 
 	#enhed__logodiv {
@@ -86,6 +88,7 @@
 		.enhed {
 			margin: auto; 
 			height: 20px;
+			font-size: 1.0rem;
 		}
 
 		#enhed__logodiv {

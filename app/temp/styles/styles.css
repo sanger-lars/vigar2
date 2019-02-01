@@ -1572,6 +1572,7 @@ iframe {
 #enheds_wrapper {
 		width: 100%;
 		margin: 0px auto;
+		padding: 1.0rem;
 		/* height: 900px; */
 	}
 
@@ -1591,6 +1592,7 @@ iframe {
 .enhed {
 		margin: auto; 
 		height: 5px;
+		font-size: 0.8rem;
 	}
 
 #enhed__logodiv {
@@ -1646,6 +1648,7 @@ iframe {
 		.enhed {
 			margin: auto; 
 			height: 20px;
+			font-size: 1.0rem;
 		}
 
 		#enhed__logodiv {
@@ -1691,6 +1694,10 @@ iframe {
    		padding-right: 10px;
 	}
 
+.overskriften h3 {
+   			font-size: 1.0rem;
+   		}
+
 .Enhedsledere {
 		color: white;
 		
@@ -1729,6 +1736,9 @@ iframe {
 			padding-top: 20px;
 			padding-bottom: 20px;
 		}
+			.overskriften h3 {
+				font-size: 1.5rem;
+			}
 
 		.flexx3 {
 			display: -webkit-box;

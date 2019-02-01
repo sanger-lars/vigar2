@@ -8,6 +8,10 @@
 		padding-bottom: 20px;
 		padding-left: 10px;
    		padding-right: 10px;
+
+   		h3 {
+   			font-size: 1.0rem;
+   		}
 	}
 
 	.Enhedsledere {
@@ -47,6 +51,9 @@
 			margin: 0px 0px;
 			padding-top: 20px;
 			padding-bottom: 20px;
+			h3 {
+				font-size: 1.5rem;
+			}
 		}
 
 		.flexx3 {
