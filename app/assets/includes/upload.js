@@ -3,7 +3,10 @@ let nr;
 
 // check for localhost
 	var lokal = (document.location.href.indexOf("localhost") > -1);
-	var split_nr = (lokal) ? 5 : 6;
+	var split_nr = (lokal) ? 5 : 5;
+    if (document.location.href.indexOf("lars-f.dk") > -1) {
+        split_nr = 6;
+    }
 
 function hent_gemte_data(callback) {
 	var posting = $.post("assets/includes/hent.php", {
