@@ -1,0 +1,18 @@
+["banner_fbu_sommerlejr.png",
+"sommerlejr bævere og ulve-2019.docx",
+"<P align=center><A href='assets/dokumenter/sommerlejr bævere og ulve-2019.docx'><IMG style=\"width: 95%\" src='assets/images/bannere/banner_fbu_sommerlejr.png'></A><br><A href='assets/dokumenter/sommerlejr troppen 2019.docx'><IMG style=\"width: 95%\" src='assets/images/bannere/banner_trop_sommerlejr.png'></A></P>",
+
+"<P align=center><IMG style='width: 95%' src='assets/images/bannere/for_mange_baevere2.png'></A></P>",
+"SOMMER-AFSLUTNING 2019</br>\ntorsdag d. 20. juni kl. 18.00 ",
+"sommer-afslutning-2019.doc",
+"<A href=\"assets/dokumenter/sommer-afslutning-2019.doc\">SOMMER-AFSLUTNING 2019</br>\ntorsdag d. 20. juni kl. 18.00 </A>"]
+
+
+0 banner1.png
+1 document1.docx
+2 html bannere
+
+3 html For mange bævere
+4 tekstbanner tekst
+5 tekstbanner.docx
+6 html tekstbanner
