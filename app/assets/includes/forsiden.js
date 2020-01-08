@@ -83,6 +83,7 @@ function lav_html(slet) {
 		var html_banner =  `<P align=center><IMG style="width: 95%" src='assets/images/bannere/${banner}'></P>`;
 	} else {
 		html_banner = alle_data[bannerfelt_html];
+		knaptekst = "Upload & Gem";
 	}
 
 	if (tekst != "" && alle_data[tekstFelt_link] != "") {
@@ -92,7 +93,7 @@ function lav_html(slet) {
 		alle_data[tekstFelt_html] = '<A href="assets/dokumenter/' + dokument + '">' + alle_data[4] + '</A>';
 		alle_data[tekstFelt_link] = dokument;
 		dokument = ""; 
-	} else {
+	} else if (tekst != "") {
 		// kun tekst
 		knaptekst = "Gem";
 	}
@@ -124,7 +125,8 @@ function lav_html(slet) {
 
 	$("#send").toggleClass("skjul",false);
 	
-	if (slet || html_stopbanner === "") knaptekst = "Bekræft sletning af banner";
+	if (slet) knaptekst = "Bekræft sletning af banner";
+	// før if (slet || html_stopbanner === "") knaptekst = "Bekræft sletning af banner";
 
 	$("#send")[0].innerHTML = knaptekst;
 } // lav_html(slet);

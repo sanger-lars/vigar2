@@ -1,0 +1,152 @@
+	    .knap {
+	      background-color: #27211e;
+	      color: #93cc19;
+	      padding: 5px 10px 5px 10px;
+	      border: solid #cd3c43 1px;
+	    }
+
+	    .knap:hover {
+	      background-color: #cd3c43;
+	      color: #27211e;
+	    }
+
+	    .skjul {
+	        display: none;
+	    }
+
+		[draggable] {
+		  -moz-user-select: none;
+		  -khtml-user-select: none;
+		  -webkit-user-select: none;
+		  user-select: none;
+		  /* Required to make elements draggable in old WebKit */
+		  -khtml-user-drag: element;
+		  -webkit-user-drag: element;
+		}
+
+		#columns {
+		  list-style-type: none;
+		}
+
+		.column {
+		
+		  width: 1000px;
+		  padding-bottom: 5px;
+		  padding-top: 5px;
+		  text-align: left;
+		  cursor: move;
+		}
+
+		span {
+			display: flex;
+		}
+
+		img {
+			height: 80px;
+
+		}
+
+		button {
+			font-size: 1.0rem;
+			margin: 1.0rem;
+		}
+		
+		button:hover {
+			cursor: pointer;
+			background-color: #93cc19;
+		}
+
+		#plus-icon, #save-icon {
+			background-color: green;
+		}
+
+		#plus-icon:hover, #save-icon:hover {
+			cursor: pointer;
+			background-color: #93cc19;
+		}
+
+		.column header {
+		  height: 100px;
+		  width: 900px;
+		  font-size: 1.0rem;
+		  color: black;
+		  background-color: #ccc;
+		  padding: 5px;
+		  border-bottom: 1px solid #ddd;
+		  border-radius: 10px;
+		  border: 2px solid #666666;
+		}
+
+		.column span div {
+			align-self: center;
+			padding: 10px; 
+		}
+
+		.column.dragElem {
+		  opacity: 0.4;
+		}
+		.column.over {
+		  //border: 2px dashed #000;
+		  border-top: 2px solid blue;
+		}
+.chk {
+	margin: 8px;
+}
+.modal.open {
+    display: flex;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    padding: 10vh 0;
+    font-size: 1.3rem
+}
+
+.modal .mcontainer {
+    background-color: white;
+    border-radius: 0.25rem;
+    width: 65vw;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.modal .close-button {
+    font-size: 150%;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.5rem;
+}
+
+.--absolut {
+   position: absolute;
+}
+
+@media screen and (min-width: 668px) {
+   .modal .mcontainer {
+    width: 75vw;
+    padding: 2rem;
+   } 
+   .modal input {
+   	font-size: 1.3rem;
+   	width: 50%;
+   }
+}
+
+#imageDiv img {
+	padding: 5px;
+	height: 150px;
+	width: auto;
+}

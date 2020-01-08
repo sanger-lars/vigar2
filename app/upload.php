@@ -58,7 +58,9 @@
     if (isset($_SESSION['u_id'])) {
       echo '<form id="logud" action="assets/includes/logout.inc.php" method="POST" style="position: absolute; right: 20px;">
         <button class="sort_knap" type="submit" name="logout-submit">Log ud</button>
-      </form><a href="forsiden.php"><button class="sort_knap" >Forsiden</button></a>';
+      </form><a href="forsiden.php"><button class="sort_knap" >Forsiden</button></a>
+      <a href="lederne.php"><button class="sort_knap" >Lederne</button></a>
+      <a href="bestyrelsen.php"><button class="sort_knap" >Bestyrelsen</button></a>';
     }
   ?>
   <script src="menu.html"></script>    
