@@ -45,7 +45,7 @@
 	    if (isset($_SESSION['u_id'])) {  
 		    echo '
 			<div style="background-color: white;"><img id="plus-icon" src="assets/images/logos/plus.png" style="float: right;height: 80px; width: auto; padding: 10px; margin-right: 5.0rem;"> <img id="save-icon" src="assets/images/logos/save.png" style="float: right;height: 80px; width: auto; margin-right: 1.0rem;"></div>
-
+			<div class="clear"></div>
 			<ul id="columns">
 
 			</ul> ';

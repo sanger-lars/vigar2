@@ -25,7 +25,6 @@ function hent_ledere(callback) {
 	}).fail(function(data) {
 		alert( "error" );
 	});
-	
 }
 
 
@@ -34,6 +33,7 @@ var nr;
 
 function ret_leder(id) {
 	m = new Modal();
+	debugger;
 	nr = find_id(id);
 	var L =Ledere[nr];
 	m.html = 
@@ -115,6 +115,7 @@ function gem_rettet_leder() {
 	gem_ledere_i_fil();
 }
 
+
 function gem_ledere_i_fil() {
 	var posting = $.post("assets/includes/gem.php", {
 	    	Ledere: Led, 
@@ -176,10 +177,10 @@ function skriv_html() {
 	var tekst="";
 	for (var i = 0; i < Ledere.length; i++) {
 		var t = Ledere[i];
-		tekst += `<li class="column" draggable="true"><header><span>
+		tekst += `<li class="column" draggable="true"><header><div>
         <img src="assets/images/ledere/${t.img}" alt="${t.alt}" >
         <div>${t.navn} - ${t.funktioner}</div>
-      <button>RET</button> <button>SLET</button></span></header></li>
+      <button>RET</button> <button>SLET</button></div></header></li>
       `
 	}
 	her.innerHTML = "";
@@ -237,90 +238,114 @@ function slet_person(e) {
 	}
 }
 
+const log = console.log;
 
 // Drag og Drop --------------------------------------------------------------------------
-function handleDragStart(e) {
-  // Target (this) element is the source node.
-  dragSrcEl = this;
+var foer, efter, sletNode;
 
-  e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/html', this.outerHTML);
+function handleDragStart(e, index) {
+	// Target (this) element is the source node.
+	dragSrcEl = this;
 
-  this.classList.add('dragElem');
+	// find elementet før og efter this
+	foer = this.previousElementSibling;
+	efter = this.nextElementSibling;
+
+	e.dataTransfer.effectAllowed = 'move';
+	e.dataTransfer.setData('text/html', this.outerHTML);
+
+	this.classList.add('dragElem');
+	sletNode = true;
 }
+
+
 
 function handleDragOver(e) {
-  if (e.preventDefault) {
-    e.preventDefault(); // Necessary. Allows us to drop.
-  }
-  this.classList.add('over');
+	if (e.preventDefault) {
+		e.preventDefault(); // Necessary. Allows us to drop.
+	}
 
-  e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+	if (dragSrcEl != this) {
+		this.classList.add('over');
+	}
 
-  return false;
+	e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
+
+	return false;
 }
 
+
 function handleDragEnter(e) {
-  // this / e.target is the current hover target.
+	// this / e.target is the current hover target.
+	if (sletNode) {
+		this.parentNode.removeChild(dragSrcEl);
+		sletNode = false;
+	}
+  
 }
 
 
 function handleDragLeave(e) {
-  this.classList.remove('over');  // this / e.target is previous target element.
-  [].forEach.call(cols, function (col) {
-    col.classList.remove('over');
-  });
+	this.classList.remove('over');  // this / e.target is previous target element.
+	[].forEach.call(cols, function (col) {
+	col.classList.remove('over');
+	});
 }
 
 
 function handleDrop(e) {
-  // this/e.target is current target element.
+	// this/e.target is current target element.
 
-  if (e.stopPropagation) {
-    e.stopPropagation(); // Stops some browsers from redirecting.
-  }
+	if (e.stopPropagation) {
+		e.stopPropagation(); // Stops some browsers from redirecting.
+	}
 
   // Don't do anything if dropping the same column we're dragging.
-  if (dragSrcEl != this) {
-    // Set the source column's HTML to the HTML of the column we dropped on.
-    //alert(this.outerHTML);
-    //dragSrcEl.innerHTML = this.innerHTML;
-    //this.innerHTML = e.dataTransfer.getData('text/html');
-    this.parentNode.removeChild(dragSrcEl);
-    var dropHTML = e.dataTransfer.getData('text/html');
-    this.insertAdjacentHTML('beforebegin',dropHTML);
-    var dropElem = this.previousSibling;
-    addDnDHandlers(dropElem);
-    var nTabel = hent_DOM();
-    Ledere = sorter_navnetabel(Ledere,nTabel);
+
+	// this.parentNode.removeChild(dragSrcEl);
+
+	var dropHTML = e.dataTransfer.getData('text/html');
+	this.insertAdjacentHTML('beforebegin',dropHTML);
+	var dropElem = this.previousSibling;
+	addDnDHandlers(dropElem);
+
+	this.classList.remove('over');
+	this.classList.remove('dragElem');
+
+	var nTabel = hent_DOM();
+	Ledere = sorter_navnetabel(Ledere,nTabel);
     
-  }
-  this.classList.remove('over');
-  this.classList.remove('dragElem');
-  return false;
+	
+	return false;
 }
 
 
 function handleDragEnd(e) {
-  // this/e.target is the source node.
-  this.classList.remove('over');
-
-  [].forEach.call(cols, function (col) {
-    col.classList.remove('over');
-  });
+	// this/e.target is the source node.
+	if (e.dataTransfer.dropEffect == 'none') {
+		//not allowed to drop here
+		
+		if (efter != null) {
+    		efter.insertAdjacentElement("beforebegin", this);
+			this.classList.remove('dragElem');
+		} else if (foer != null) {
+			foer.insertAdjacentElement("afterend", this);
+			this.classList.remove('dragElem');
+		} 
+	}
 }
 
 
 function addDnDHandlers(elem) {
-  elem.addEventListener('dragstart', handleDragStart, false);
-  elem.addEventListener('dragenter', handleDragEnter, false)
-  elem.addEventListener('dragover', handleDragOver, false);
-  elem.addEventListener('dragleave', handleDragLeave, false);
-  elem.addEventListener('drop', handleDrop, false);
-  elem.addEventListener('dragend', handleDragEnd, false);
-  let knap = elem.getElementsByTagName('button');
-  knap[0].addEventListener('click', ret_leder);
-  knap[1].addEventListener('click', slet_person);
+	elem.addEventListener('dragstart', handleDragStart, false);
+	elem.addEventListener('dragenter', handleDragEnter, false)
+	elem.addEventListener('dragover', handleDragOver, false);
+	elem.addEventListener('dragleave', handleDragLeave, false);
+	elem.addEventListener('drop', handleDrop, false);
+	elem.addEventListener('dragend', handleDragEnd, false);
+	let knap = elem.getElementsByTagName('button');
+	knap[0].addEventListener('click', ret_leder);
+	knap[1].addEventListener('click', slet_person);
 }
 
 
