@@ -11,11 +11,8 @@
   <meta name="description" content="Hjemmeside for KFUM Spejderne Vigar Stamme.">
   <META content=da http-equiv=Content-Language>
   <META content="text/html"; charset="utf-8"; http-equiv="Content-Type">
-  <!-- build:css assets/styles/styles.css -->
-  <link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
-  <!-- endbuild -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/includes/forsiden.js"></script>
 
   <script>
@@ -132,6 +129,12 @@
   <?php 
     if (isset($_SESSION['u_id'])) {  
     echo '
+
+    <br>
+    <div class="hvidbrun skjul" id="tekstfeldt"oncontextmenu="hoejreklik(event);return false;"></div>
+    <br>
+     <div id="banner" style="display: visible;" oncontextmenu="hoejreklik(event);return false;"></div> 
+    <div id="b-banner" oncontextmenu="hoejreklik(event);return false;"></div>
       <div align="center" style="color: #93cc19;">
       
         <form method="POST" action="assets/includes/banner_opload.php" enctype="multipart/form-data" >
@@ -171,17 +174,14 @@
   ?>
   
   <br>
-  <div class="hvidbrun skjul" id="tekstfeldt"oncontextmenu="hoejreklik(event);return false;"></div>
+<!--   <div class="hvidbrun skjul" id="tekstfeldt"oncontextmenu="hoejreklik(event);return false;"></div>
   <br>
    <div id="banner" style="display: visible;" oncontextmenu="hoejreklik(event);return false;"></div> 
-  <div id="b-banner" oncontextmenu="hoejreklik(event);return false;"></div>
+  <div id="b-banner" oncontextmenu="hoejreklik(event);return false;"></div> -->
   <div class="clear"></div>
   <div class="filler" style="height: 300px"></div>
   <script src="footer.html"></script>  
 
-<!-- build:js assets/scripts/App.js -->
-<script type="text/javascript" src="temp/scripts/App.js"></script>
-<!-- endbuild -->
 <script type="text/javascript" src="assets/includes/hent_bannere.js"></script>
 
 

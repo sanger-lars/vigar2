@@ -11,9 +11,6 @@
   <meta name="description" content="Hjemmeside for KFUM Spejderne Vigar Stamme.">
   <META content=da http-equiv=Content-Language>
   <META content="text/html"; charset="utf-8"; http-equiv="Content-Type">
-  <!-- build:css assets/styles/styles.css -->
-  <link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
-  <!-- endbuild -->
 
   <link rel="stylesheet" type="text/css" href="ledogbe.css">
 

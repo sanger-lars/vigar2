@@ -49,10 +49,10 @@ window.onload = function() {
 	function drawFlakes() {
 
 		ctx.clearRect(0,0,w,h);
-		ctx.fillStyle = "green";
+		ctx.fillStyle = "#93cc19";
 		var font = 60*scale_w;
 		ctx.font = font +'px serif';
-		 ctx.fillText('Husk at der er vinterferie i uge 7 ', 70*scale_w, 140*scale_h);
+		 ctx.fillText('Husk at der er vinterferie i uge 7 ', 40*scale_w, 140*scale_h);
 		 ctx.fillText('og derfor ingen m'+String.fromCharCode(248)+'der', 170*scale_w,200*scale_h);
 		ctx.fillStyle = "white";
 		ctx.beginPath();

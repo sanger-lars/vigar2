@@ -2,6 +2,13 @@
 	padding-top: 0px;
 	color: $logoYellow;
 	
+	a {
+		font-size: 1.0rem;
+
+		@mixin atLarge {
+			font-size: .97rem;
+		}
+	}
 	
 	ul {
 		margin: 0;

@@ -79,7 +79,7 @@
 	float: none;
 	font-family: Arial, sans-serif; 
 	text-align: left;
-	color: $logoYellow;
+	color: #93cc19;
 	width: 60%;
 	margin: 0 auto;
 	margin-top: 10px;
@@ -101,10 +101,10 @@
 	@mixin atLarge {
 		float: right;
 		height: 100%;
-		width: 50%;
-		margin-top: 150px;
+		margin-top: 5%;
 		margin-bottom: auto;
 		vertical-align: middle;
+		max-width:  40%;
 
 		h1 {
 			font-size: 72px;
@@ -120,16 +120,16 @@
 }
 
 .logo--stort {
-
 	img {
-		max-width:  75%;
+		min-width: 50%;
+		max-width:  50%;
 	}
 
 	@mixin atLarge {
 		display: inline-block;
 
 		img {
-			max-width:  100%;
+			max-width:  80%;
 		}
 	}
 

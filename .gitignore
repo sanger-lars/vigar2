@@ -13,6 +13,8 @@ node_modules/
 .tmp/
 vigar page/
 docs/
+dist/
+gulp/
 test.js
 
 # OS or Editor folders

@@ -11,11 +11,8 @@
   <meta name="description" content="Hjemmeside for KFUM Spejderne Vigar Stamme.">
   <META content=da http-equiv=Content-Language>
   <META content="text/html"; charset="utf-8"; http-equiv="Content-Type">
-  <!-- build:css assets/styles/styles.css -->
-  <link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
-  <!-- endbuild -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/includes/upload.js"></script>  
   
   <style>
@@ -113,11 +110,6 @@
   <div class="clear"></div>
   <div class="filler" style="height: 300px"></div>
   <script src="footer.html"></script>  
-
-<!-- build:js assets/scripts/App.js -->
-<script type="text/javascript" src="temp/scripts/App.js"></script>
-<!-- endbuild -->
-
 
 </body>
 </html>

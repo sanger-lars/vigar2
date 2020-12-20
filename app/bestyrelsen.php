@@ -11,9 +11,6 @@
   <meta name="description" content="Hjemmeside for KFUM Spejderne Vigar Stamme.">
   <META content=da http-equiv=Content-Language>
   <META content="text/html"; charset="utf-8"; http-equiv="Content-Type">
-  <!-- build:css assets/styles/styles.css -->
-  <link rel="stylesheet" type="text/css" href="temp/styles/styles.css">
-  <!-- endbuild -->
 	<link rel="stylesheet" type="text/css" href="ledogbe.css">
 </head>
 
@@ -49,7 +46,7 @@
 	?>
 	<script type="text/javascript">const Led = false;</script>
 	<script src="assets/includes/modal.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/includes/lederne.js"></script>
 
 </body>

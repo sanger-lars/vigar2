@@ -126,6 +126,8 @@
 	  width: 65vw;
 	  padding: 0.5rem;
 	  position: relative;
+	  overflow-y: scroll;
+	  height: 100%;
 	}
 
 	.modal .close-button {
