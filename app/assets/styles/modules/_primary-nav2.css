@@ -1,87 +1,87 @@
 .primary-nav2 {
-	padding-top: 0px;
-	color: $logoYellow;
-	
-	a {
-		font-size: 1.0rem;
+  padding-top: 0px;
+  color: $logoYellow;
 
-		@mixin atLarge {
-			font-size: .97rem;
-		}
-	}
-	
-	ul {
-		margin: 0;
-		padding: 0;
-		
-		
-		@mixin clearfix;
-	}
+  a {
+    font-size: 1rem;
 
-	li:hover, .dropdown-content a:hover {
-		background-color: $logoRed;
-		a {
-			color: $logoYellow;
-		}
-	}
+    @mixin atLarge {
+      font-size: 1.5rem;
+    }
+  }
 
-	li:hover {
-		background-color: $logoRed;
-	}
+  ul {
+    margin: 0;
+    padding: 0;
 
-	a:hover {
-		color: logoYellow;
-	}
+    @mixin clearfix;
+  }
 
-	li.dropdown {
-	    display: inline-block;
-	}
+  li:hover,
+  .dropdown-content a:hover {
+    background-color: $logoRed;
+    a {
+      color: $logoYellow;
+    }
+  }
 
-	.dropdown:hover .dropdown-content {
-	    display: block;
-	}
+  li:hover {
+    background-color: $logoRed;
+  }
 
-	.dropdown-content {
-	    display: none;
-	    position: absolute;
-	    background-color: rgba($logoGreen, .66);
-	    min-width: 160px;
-	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
-	    z-index: 1;
-	}
+  a:hover {
+    color: logoYellow;
+  }
 
-	.dropdown--hKant {
-		transform: translateX(-50%);
-	}
+  li.dropdown {
+    display: inline-block;
+  }
 
-	.dropdown-content a {
-	    color: $logoYellow;
-	    padding: 5px 10px;
-	    text-decoration: none;
-	    display: block;
-	    text-align: center;
-	}
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
-	.dropdown:hover .dropdown-content {
-	    display: block;
-	}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba($logoGreen, 0.66);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
 
-	li {
-		list-style: none;		
-		font-size: 1.5rem;
-		padding: 5px;
-		display: list-item;
+  .dropdown--hKant {
+    transform: translateX(-50%);
+  }
 
-		@mixin atLarge {
-			display: inline;
-			padding-right: 15px;
-			font-size: 1.2rem;
-		}
-	}
+  .dropdown-content a {
+    color: $logoYellow;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
 
-	&--centered {
-		ul
-			{text-align: center;}
-		
-	}
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  li {
+    list-style: none;
+    font-size: 1.5rem;
+    padding: 5px;
+    display: list-item;
+
+    @mixin atLarge {
+      display: inline;
+      padding-right: 15px;
+      font-size: 1.2rem;
+    }
+  }
+
+  &--centered {
+    ul {
+      text-align: center;
+    }
+  }
 }
